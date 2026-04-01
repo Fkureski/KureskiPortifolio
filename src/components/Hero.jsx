@@ -1,3 +1,5 @@
+import profilePic from '../assets/Portifolio_pic.jpeg';
+
 const Hero = () => {
   const styles = {
     heroSection: {
@@ -128,12 +130,12 @@ const Hero = () => {
           }
         `}
       </style>
-      
+
       <div style={styles.imageWrapper} className="animate-fade-in hero-img-wrap">
-        <img 
-          src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&q=80&w=600&h=600" 
-          alt="Felipe Profile Placeholder" 
-          style={styles.profileImage} 
+        <img
+          src={profilePic}
+          alt="Felipe Profile Placeholder"
+          style={styles.profileImage}
           className="hero-img"
         />
       </div>
@@ -141,14 +143,14 @@ const Hero = () => {
       <div style={styles.content} className="animate-fade-in">
         <h3 style={styles.greeting}>Hi, I'm Felipe</h3>
         <h1 style={styles.title}>
-          I engineer robust <br />
+          I engineer <br />
           <span style={styles.gradientText}>Data Solutions</span> &<br />
           Back-end Systems
         </h1>
         <p style={styles.subtitle}>
-          I'm a specialized <span style={styles.highlight}>Data Engineer</span> and <span style={styles.highlight}>Python Developer</span>, 
-          with strong capabilities in <span style={styles.highlight}>C# / .NET</span>. I design scalable architectures, 
-          build reliable data pipelines, and craft efficient APIs that drive business decisions.
+          I'm a <span style={styles.highlight}>Data Engineer</span> and <span style={styles.highlight}>Python Developer</span>,
+          with capabilities in <span style={styles.highlight}>C# / .NET</span>. I design scalable architectures,
+          build reliable data pipelines, and craft efficient APIs.
         </p>
         <div style={styles.ctaWrap}>
           <a href="#projects" style={styles.ctaPrimary} className="cta-btn-primary">View My Work</a>

@@ -20,7 +20,7 @@ const Navbar = () => {
         }
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -95,12 +95,15 @@ const Navbar = () => {
 
   return (
     <nav style={styles.navbar}>
-      <a href="#home" style={styles.logo}>KU<span style={styles.span}>RESKI</span></a>
+      <a href="#home" style={styles.logo}>
+        <span style={{ color: 'var(--text-primary)' }}>Felipe </span>
+        <span style={styles.span}>Kureski</span>
+      </a>
       <ul style={styles.navLinks}>
         {navItems.map(item => (
           <li key={item.id}>
-            <a 
-              href={`#${item.id}`} 
+            <a
+              href={`#${item.id}`}
               style={{
                 ...styles.link,
                 color: activeTab === item.id ? 'var(--text-primary)' : 'var(--text-secondary)'
@@ -115,7 +118,7 @@ const Navbar = () => {
               }}
             >
               {item.label}
-              <div 
+              <div
                 className="indicator"
                 style={{
                   ...styles.navItemIndicator,

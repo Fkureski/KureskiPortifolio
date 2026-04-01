@@ -1,31 +1,6 @@
-const Projects = () => {
-  const projectsData = [
-    {
-      id: 1,
-      title: 'Real-time Data Pipeline',
-      description: 'An enterprise-level data pipeline built with Python and Apache Kafka to process streaming data into a central data warehouse for immediate analytics. Features decoupled microservices and fault-tolerant ingestion.',
-      techStack: ['Python', 'Kafka', 'SQL', 'Docker'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800&h=400',
-      link: 'https://github.com/felipekureski'
-    },
-    {
-      id: 2,
-      title: 'Financial Analytics API',
-      description: 'A robust .NET / C# backend API serving complex financial queries. Implements deep caching mechanisms, RESTful standards, and entity framework optimization handling thousands of concurrent requests.',
-      techStack: ['C#', '.NET Core', 'PostgreSQL', 'Redis'],
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800&h=400',
-      link: 'https://github.com/felipekureski'
-    },
-    {
-      id: 3,
-      title: 'Automated ETL Framework',
-      description: 'A custom Python ETL framework that extracts data from multiple disjointed REST APIs, transforms it using Pandas, and loads it into a consolidated reporting database with automated error logging.',
-      techStack: ['Python', 'Pandas', 'Airflow', 'AWS'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800&h=400',
-      link: 'https://github.com/felipekureski'
-    }
-  ];
+import { projectsData } from '../data/projectsData';
 
+const Projects = () => {
   const styles = {
     grid: {
       display: 'grid',
