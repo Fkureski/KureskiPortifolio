@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
@@ -6,14 +7,18 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <main>
-        <Hero />
-        <Projects />
-        <Contact />
-      </main>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Hero />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 

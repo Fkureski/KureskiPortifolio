@@ -1,24 +1,12 @@
 import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeTab, setActiveTab] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-
-      // Simple scroll spy logic
-      const sections = ['home', 'projects', 'contact'];
-      for (const id of sections) {
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-            setActiveTab(id);
-          }
-        }
-      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -88,44 +76,48 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { id: 'home', label: 'About' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' }
+    { path: '/', label: 'About' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/contact', label: 'Contact' }
   ];
 
   return (
     <nav style={styles.navbar}>
-      <a href="#home" style={styles.logo}>
+      <NavLink to="/" style={styles.logo}>
         <span style={{ color: 'var(--text-primary)' }}>Felipe </span>
         <span style={styles.span}>Kureski</span>
-      </a>
+      </NavLink>
       <ul style={styles.navLinks}>
         {navItems.map(item => (
-          <li key={item.id}>
-            <a
-              href={`#${item.id}`}
-              style={{
+          <li key={item.path}>
+            <NavLink 
+              to={item.path}
+              style={({ isActive }) => ({
                 ...styles.link,
-                color: activeTab === item.id ? 'var(--text-primary)' : 'var(--text-secondary)'
-              }}
+                color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)'
+              })}
               onMouseEnter={(e) => {
                 const indicator = e.currentTarget.querySelector('.indicator');
                 if (indicator) indicator.style.width = '100%';
               }}
               onMouseLeave={(e) => {
                 const indicator = e.currentTarget.querySelector('.indicator');
-                if (indicator && activeTab !== item.id) indicator.style.width = '0%';
+                if (indicator && !e.currentTarget.classList.contains('active')) indicator.style.width = '0%';
               }}
             >
-              {item.label}
-              <div
-                className="indicator"
-                style={{
-                  ...styles.navItemIndicator,
-                  width: activeTab === item.id ? '100%' : '0%'
-                }}
-              />
-            </a>
+              {({ isActive }) => (
+                <>
+                  {item.label}
+                  <div 
+                    className="indicator"
+                    style={{
+                      ...styles.navItemIndicator,
+                      width: isActive ? '100%' : '0%'
+                    }}
+                  />
+                </>
+              )}
+            </NavLink>
           </li>
         ))}
       </ul>

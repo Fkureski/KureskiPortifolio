@@ -4,6 +4,14 @@ import DataEngineeringStudies from '../assets/DataEngineeringStudies.png';
 
 export const projectsData = [
   {
+    id: 4,
+    title: 'Data & AI: Streaming Pipeline',
+    description: 'Pipeline de monitoramento de dados em tempo real usando Clean Architecture. Integra Apache Kafka para mensageria desacoplada, Pandas/Pydantic para ETL, Llama 3 local via Ollama para IA Generativa, e PostgreSQL. Deploy via Docker com CI/CD no Azure.',
+    techStack: ['Python', 'Kafka', 'Llama 3', 'PostgreSQL', 'Docker'],
+    image: '/streaming_pipeline.png',
+    link: 'https://github.com/Fkureski/News-Intelligence-Hub'
+  },
+  {
     id: 1,
     title: 'First Project Soda Machine | College Project',
     description: 'My first Python project is a vending machine simulator that lets users buy drinks with cash or Pix, while managing stock, payments, and change, with an admin mode for control and monitoring.',
