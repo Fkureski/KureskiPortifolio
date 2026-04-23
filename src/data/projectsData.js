@@ -1,6 +1,7 @@
 import CoinMachine from '../assets/CoinMachine.png';
 import DataAnalytics from '../assets/DataAnalytics.png';
 import DataEngineeringStudies from '../assets/DataEngineeringStudies.png';
+import StreamingPipeline from '../assets/streaming_pipeline.png';
 
 export const projectsData = [
   {
@@ -8,7 +9,7 @@ export const projectsData = [
     title: 'Data & AI: Streaming Pipeline',
     description: 'Pipeline de monitoramento de dados em tempo real usando Clean Architecture. Integra Apache Kafka para mensageria desacoplada, Pandas/Pydantic para ETL, Llama 3 local via Ollama para IA Generativa, e PostgreSQL. Deploy via Docker com CI/CD no Azure.',
     techStack: ['Python', 'Kafka', 'Llama 3', 'PostgreSQL', 'Docker'],
-    image: '/streaming_pipeline.png',
+    image: StreamingPipeline,
     link: 'https://github.com/Fkureski/News-Intelligence-Hub'
   },
   {
