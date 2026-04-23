@@ -6,9 +6,9 @@ import StreamingPipeline from '../assets/streaming_pipeline.png';
 export const projectsData = [
   {
     id: 4,
-    title: 'Data & AI: Streaming Pipeline',
-    description: 'Pipeline de monitoramento de dados em tempo real usando Clean Architecture. Integra Apache Kafka para mensageria desacoplada, Pandas/Pydantic para ETL, Llama 3 local via Ollama para IA Generativa, e PostgreSQL. Deploy via Docker com CI/CD no Azure.',
-    techStack: ['Python', 'Kafka', 'Llama 3', 'PostgreSQL', 'Docker'],
+    title: 'News Data Hub with AI',
+    description: 'A real-time data monitoring pipeline using Clean Architecture. It integrates Apache Kafka for decoupled messaging, Pandas/Pydantic for ETL, local Llama 3 (via Ollama) for Generative AI, and PostgreSQL. Deployed via Docker with CI/CD pipelines on Azure.',
+    techStack: ['Python', 'Kafka', 'Llama 3', 'PostgreSQL', 'Docker', 'Azure'],
     image: StreamingPipeline,
     link: 'https://github.com/Fkureski/News-Intelligence-Hub'
   },
